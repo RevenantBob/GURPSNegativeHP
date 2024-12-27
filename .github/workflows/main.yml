@@ -14,7 +14,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Create a ZIP file with the specified files
+      # Create a ZIP file with the specified files in a folder "gurps-negative-hp"
       - name: Create ZIP
         run: |
           mkdir -p dist/gurps-negative-hp
@@ -23,11 +23,18 @@ jobs:
           cd dist
           zip -r module.zip gurps-negative-hp
 
-      # Create a GitHub Release and upload the ZIP file
+      # Copy module.json to the dist folder for separate release
+      - name: Copy module.json
+        run: |
+          cp module.json dist/
+
+      # Create a GitHub Release and upload the ZIP file and module.json
       - name: Create GitHub Release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: dist/module.zip
+          artifacts: |
+            dist/module.zip
+            dist/module.json
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ github.ref_name }}
           name: Release ${{ github.ref_name }}
