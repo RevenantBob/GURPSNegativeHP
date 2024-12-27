@@ -32,9 +32,9 @@ jobs:
       # Create a ZIP file with the specified files in a folder "gurps-negative-hp"
       - name: Create ZIP
         run: |
-          mkdir -p dist/gurps-negative-hp
+          mkdir -p dist/gurps-negative-hp/scripts
           cp module.json dist/gurps-negative-hp/
-          cp scripts/gurps-negative-hp.js dist/gurps-negative-hp/
+          cp scripts/gurps-negative-hp.js dist/gurps-negative-hp/scripts/
           cd dist
           zip -r module.zip gurps-negative-hp
 
