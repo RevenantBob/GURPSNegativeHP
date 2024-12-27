@@ -7,10 +7,6 @@
       "name": "RevenantBob"
       }
     ],
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/chrisk123999/chris-premades.git"
-    },
     "version": "1.0.0",
     "compatibility": {
       "minimum": "12",
