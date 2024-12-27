@@ -1,0 +1,23 @@
+{
+    "id": "gurps-negative-hp",
+    "title": "GURPS Negative HP",
+    "description": "Allows negative HP on module properties.",
+    "authors": [
+      {
+      "name": "RevenantBob"
+      }
+    ],
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/chrisk123999/chris-premades.git"
+    },
+    "version": "1.0.0",
+    "compatibility": {
+      "minimum": "12",
+      "verified": "12"
+    },
+    "scripts": [],
+    "esmodules": [
+      "scripts/gurps-negative-hp.js"
+    ]
+  }
