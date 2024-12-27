@@ -1,5 +1,8 @@
 name: Build and Release Foundry Module
 
+permissions:
+  contents: write
+
 on:
   push:
     tags:
@@ -18,7 +21,7 @@ jobs:
       - name: Update module.json
         run: |
           TAG_NAME=${{ github.ref_name }}
-          VERSION=${TAG_NAME#v} 
+          VERSION=${TAG_NAME#v} # Strip the 'v' prefix
           REPO_URL=https://github.com/${{ github.repository }}
           RAW_URL=https://raw.githubusercontent.com/${{ github.repository }}/${TAG_NAME}/module.json
           ZIP_URL=${REPO_URL}/releases/download/${TAG_NAME}/module.zip
@@ -54,4 +57,5 @@ jobs:
             ## Release Notes
             Automated release for version ${{ github.ref_name }}.
           draft: false
+
 
