@@ -17,8 +17,11 @@ jobs:
       # Create a ZIP file with the specified files
       - name: Create ZIP
         run: |
-          mkdir -p dist
-          zip -j dist/module.zip module.json scripts/gurps-negative-hp.js
+          mkdir -p dist/gurps-negative-hp
+          cp module.json dist/gurps-negative-hp/
+          cp scripts/gurps-negative-hp.js dist/gurps-negative-hp/
+          cd dist
+          zip -r module.zip gurps-negative-hp
 
       # Create a GitHub Release and upload the ZIP file
       - name: Create GitHub Release
